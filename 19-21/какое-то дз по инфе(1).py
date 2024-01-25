@@ -17,3 +17,12 @@
 # print(f'21: {min(s for s in range(1, 60) if game(s, 0, 2) or game(s, 0, 4) and not game(s, 0, 2))}')
 
 
+def f(n):
+    if n == 0:
+        return 0
+    return f(n//10)+f(n%10)
+cnt = 0
+for i in range(765432015, 1542613238):
+    if f(i) > f(i+1):
+        cnt +=1
+print(cnt)
